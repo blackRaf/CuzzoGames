@@ -82,7 +82,7 @@ Open `config.js`. It's plain text with comments.
 - `questions`: the text, `who` (`"cousins"` or `"elders"`, which decides the list of names), and the `badge` the winner earns.
 - `titles`: titles for people with several wins, the overall leader, and people who didn't win anything.
 
-Changes go live on GitHub Pages a minute after you push. Phones that already have the game cached pick up the change the next time they reload the page. To force it everywhere, change `CACHE` in `sw.js` (for example `cuzzo-v2`).
+Changes go live on GitHub Pages a minute after you push. Phones with signal pick up changes to the pages and `config.js` the next time they open or reload the game (without signal they use their saved copy). If a phone ever seems stuck on old files, reload once more.
 
 Don't rename people after the game has started; their votes are saved under their name.
 
