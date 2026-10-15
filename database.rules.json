@@ -1,0 +1,39 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "game": {
+      ".read": true,
+      ".write": true,
+      "phase": {
+        ".validate": "newData.isString() && (newData.val() === 'lobby' || newData.val() === 'voting' || newData.val() === 'closed' || newData.val() === 'revealed' || newData.val() === 'recap')"
+      }
+    },
+
+    "players": {
+      ".read": true,
+      "$id": {
+        ".write": true,
+        ".validate": "newData.isNumber()"
+      }
+    },
+
+    "results": {
+      ".read": true,
+      ".write": true
+    },
+
+    "votes": {
+      ".read": true,
+      ".write": "!newData.exists()",
+      "$qid": {
+        ".write": "!newData.exists()",
+        "$voter": {
+          ".write": "root.child('game/phase').val() === 'voting' && root.child('game/qid').val() === $qid",
+          ".validate": "newData.isString() && newData.val() !== $voter && newData.val().length < 60"
+        }
+      }
+    }
+  }
+}

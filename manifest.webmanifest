@@ -1,0 +1,14 @@
+{
+  "name": "Cuzzo Games",
+  "short_name": "Cuzzo Games",
+  "description": "A voting game for the cousins.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#17082b",
+  "theme_color": "#17082b",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
