@@ -96,7 +96,7 @@ Don't rename people after the game has started; their votes are saved under thei
 
 - **Security is light on purpose.** The host code only keeps curious cousins out of the host screen; it isn't real security. The database rules stop votes after voting closes, votes for yourself, and votes for the wrong question, but there are no accounts, so a determined person could still tamper with the game. That's fine for a family wedding.
 - **After the wedding**, delete the Realtime Database in Firebase (or set its rules to `".write": false`) if you want to shut it down.
-- **Free tier:** 19 phones is a tiny load for Firebase's free plan.
+- **Free tier:** A couple dozen phones is a tiny load for Firebase's free plan.
 
 ## 7. Files
 

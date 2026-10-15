@@ -40,6 +40,7 @@ window.CUZZO_CONFIG = {
     "Deina",
     "Melissa",
     "Aicha",
+    "Amie",
     "Mariame",
     "Tairou",
     "Marcel",

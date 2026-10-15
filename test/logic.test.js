@@ -8,8 +8,8 @@ require("../config.js");
 const cfg = global.window.CUZZO_CONFIG;
 const people = L.buildPeople(cfg);
 
-test("config has 19 cousins, 5 elders, 21 questions", () => {
-  assert.equal(cfg.cousins.length, 19);
+test("config has 20 cousins, 5 elders, 21 questions", () => {
+  assert.equal(cfg.cousins.length, 20);
   assert.equal(cfg.elders.length, 5);
   assert.equal(cfg.questions.length, 21);
   assert.equal(cfg.questions[0].text, "Who is the biggest bum?");
@@ -18,11 +18,17 @@ test("config has 19 cousins, 5 elders, 21 questions", () => {
 
 test("names are unique and every question has a valid group and badge", () => {
   const ids = Object.keys(people.byId);
-  assert.equal(ids.length, 24);
+  assert.equal(ids.length, cfg.cousins.length + cfg.elders.length, "every name gets a unique id");
   cfg.questions.forEach((q, i) => {
     assert.ok(q.who === "cousins" || q.who === "elders", `q${i + 1} who`);
     assert.ok(q.badge, `q${i + 1} badge`);
   });
+});
+
+test("cousin Amie and Tata Amie stay separate people", () => {
+  assert.notEqual(L.slugify("Amie"), L.slugify("Tata Amie"));
+  assert.equal(people.byId["amie"].group, "cousins");
+  assert.equal(people.byId["tata-amie"].group, "elders");
 });
 
 test("slugify handles Jr names", () => {
