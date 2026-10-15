@@ -16,7 +16,7 @@ Before Firebase is set up, the game runs in demo mode so you can practice.
 npm run serve        # or: python3 -m http.server 8080
 ```
 
-Open `http://localhost:8080/host.html` in one tab (host code: `2026`) and `http://localhost:8080/` in another tab. Demo mode only syncs between tabs of the same browser, so it's for practice, not for the real party.
+Open `http://localhost:8080/host.html` in one tab (host code: the `hostPin` in `config.js`) and `http://localhost:8080/` in another tab. Demo mode only syncs between tabs of the same browser, so it's for practice, not for the real party.
 
 ## 2. One-time setup (about 10 minutes, free)
 
@@ -44,7 +44,7 @@ Paste the guest link into any free QR generator (for example <https://www.qr-cod
 
 ### d) Change the host code
 
-Open `config.js` and change `hostPin` from `2026` to something only you know.
+Open `config.js` and change `hostPin` to something only you know.
 
 ---
 

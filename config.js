@@ -24,7 +24,7 @@ window.CUZZO_CONFIG = {
   /* The host screen (host.html) asks for this code. Change it before the
      wedding. It keeps curious cousins out of the host controls; it is not
      bank-grade security. */
-  hostPin: "2026",
+  hostPin: "cuzzo7391",
 
   /* --- The people ------------------------------------------------------- */
   elders: [
